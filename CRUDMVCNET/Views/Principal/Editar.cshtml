@@ -1,0 +1,37 @@
+﻿@model ContactoModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Contacto
+    </div>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="Principal" method="post">
+            <input asp-for="IdContacto" type="Hidden" class="form-control">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre</label>
+                <input asp-for="Nombre" type="text" class="form-control"  placeholder="introduzca nombre">
+                <small id="emailHelp" class="form-text text-muted">never give up</small>
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Telefono</label>
+                <input asp-for="Telefono" type="text" class="form-control" placeholder="Telefono">
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input asp-for="Correo" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">never give up</small>
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-action="Listar" asp-controller="Principal" class="btn btn-warning">volver a la lista </a>
+        </form>
+    </div>
+</div>
+
+

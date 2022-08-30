@@ -1,0 +1,23 @@
+﻿@model ContactoModel
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Contacto
+    </div>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="Principal" method="post">
+            <input asp-for="IdContacto" class="form-control">
+            <div class="alert alert-danger" role="alert">
+                Eliminar contacto? : @Html.DisplayTextFor(m => m.Nombre)?
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Eliminar</button>
+            <a asp-action="Listar" asp-controller="Principal" class="btn btn-warning">Volver a la lista </a>
+        </form>
+    </div>
+</div>
+
